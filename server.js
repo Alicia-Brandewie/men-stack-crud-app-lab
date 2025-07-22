@@ -1,21 +1,22 @@
-//const dotenv = require("dotenv");
-//dotenv.config();
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require('express');
-//const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 const app = express();
 
-//mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI);
+mongoose.connection.on("connected", () => {
+    console.log(`Connected to MongoDB ${mongoose.connection.cars}.`);
+});
 
-//mongoose.connection.on("connected", () => {
-  //  console.log(`Connected to MongoDB ${mongoose.connection.cars}.`);
-//});
+const Car = require("./models/car.js");
 
 
-
-// app.get("/", async (req, res) => {
-//  // res.send("hello, friend!");
-// });
+//confirmed
+ //app.get("/", async (req, res) => {
+     //res.send("hello, friend!"); 
+ //});
 
 app.get("/", async (req, res) => {
   res.render("index.ejs");
