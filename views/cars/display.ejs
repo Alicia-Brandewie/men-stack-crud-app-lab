@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Display Page</title>
+  </head>
+  <body>
+    <h1>Here Is Your Car</h1>
+     <h1> <%= car.make + "" + car.model %></h1>
+<% if (car.currentCar) { %>
+    <p>This is your current car!</p>
+  <% } else { %>
+    <p>This is not your current car!</p>
+  <% } %>
+  </body>
+</html>
