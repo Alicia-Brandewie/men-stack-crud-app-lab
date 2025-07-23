@@ -7,11 +7,14 @@
   </head>
   <body>
     <h1>Here Is Your Car</h1>
-     <h1> <%= car.make + "" + car.model %></h1>
+     <h1> <%= car.make + " " + car.model %></h1>
 <% if (car.currentCar) { %>
     <p>This is your current car!</p>
   <% } else { %>
     <p>This is not your current car!</p>
   <% } %>
+          <a href="/cars">Browse Cars</a>
+          <a href="/">Back to home</a>
+
   </body>
 </html>
