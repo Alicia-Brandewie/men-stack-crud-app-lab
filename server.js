@@ -12,11 +12,7 @@ mongoose.connection.on("connected", () => {
 
 const Car = require("./models/car.js");
 
-
-//confirmed
- //app.get("/", async (req, res) => {
-     //res.send("hello, friend!"); 
- //});
+app.use(express.urlencoded({ extended: false }));
 
 app.get("/", async (req, res) => {
   res.render("index.ejs");
@@ -26,7 +22,15 @@ app.get("/cars/new", (req, res)=> {
   res.render("cars/new.ejs");
 })
 
-
+app.post("/cars", async(req,res) =>{
+if (req.body.currentCar === "on") {
+  req.body.currentCar = true;
+} else {
+  req.body.currentCar = false;
+}
+await Car.create(req.body);
+  res.redirect("/cars/new");
+})
 
 
 
