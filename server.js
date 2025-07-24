@@ -57,6 +57,12 @@ app.get("/cars/:carId", async (req, res) => {
   res.render("cars/display.ejs", {car: foundCar});
 });
 
+app.get("/cars/:carId/edit", async (req, res)=> {
+  const foundCar = await Car.findById(req.params.carId);
+  res.render("./cars/edit.ejs", {
+    car: foundCar,
+  });
+});
 
 
 

@@ -15,6 +15,7 @@
       <% } else { %>
         <p>This is not your current car!</p>
       <% } %>
+        <a href="/cars/<%= car._id %>/edit">Edit <%= car.make + " " + car.model%></a>
         <a href="/cars">Browse Cars</a>
         <a href="/">Back to home</a>
   </body>

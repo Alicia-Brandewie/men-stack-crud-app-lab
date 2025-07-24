@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+</head>
+
+<body>
+    <h1>Edit your car catalog entry!</h1>
+    <form action="/cars/<%=car._id%>?_method=PUT" method="POST">
+        <label for="make">Make:</label>
+        <input type="text" name="make" id="make" value="<%= car.make %>" />
+
+        <label for="model">Model:</label>
+        <input type="text" name="model" id="model" value="<%= car.model %>" />
+
+        <label for="year">Year:</label>
+        <input type="text" name="year" id="year" value="<%= car.year %>" />
+
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color" value="<%= car.color %>" />
+
+        <label for="nickname">Nickname:</label>
+        <input type="text" name="nickname" id="nickname" value="<%= car.nickname %>" />
+
+        <label for="currentCar">Current Car?</label>
+        <input type="checkbox" name="currentCar" id="currentCar" 
+        <% if (car.currentCar) { 
+            %>checked<% 
+        } 
+        %>></input>
+
+            <button type="submit">Update car</button>
+    </form>
+    <a href="/">Back to home</a>
+
+</body>
+
+</html>
