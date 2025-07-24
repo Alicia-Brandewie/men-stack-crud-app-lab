@@ -16,6 +16,9 @@
         <p>This is not your current car!</p>
       <% } %>
         <a href="/cars/<%= car._id %>/edit">Edit <%= car.make + " " + car.model%></a>
+        <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= car.make + " " + car.model%></button>
+        </form>
         <a href="/cars">Browse Cars</a>
         <a href="/">Back to home</a>
   </body>

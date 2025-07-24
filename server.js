@@ -21,6 +21,9 @@ const Car = require("./models/car.js");
 app.use(express.urlencoded({ extended: false }));
 
 /*---------- Middleware ----------*/ 
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(morgan("dev")); 
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method")); 
@@ -70,11 +73,15 @@ app.put("/cars/:carId", async (req, res) => {
   } else {
     req.body.currentCar = false;
   }
-
   await Car.findByIdAndUpdate(req.params.carId, req.body);
-  
   res.redirect(`/cars/${req.params.carId}`);
 });
+
+app.delete("/cars/:carId", async (req, res) => {
+  await Car.findByIdAndDelete(req.params.carId);
+  res.redirect("/cars");
+});
+
 
 
 app.listen(3000, () => {
