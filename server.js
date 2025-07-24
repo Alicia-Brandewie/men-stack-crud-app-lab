@@ -64,7 +64,17 @@ app.get("/cars/:carId/edit", async (req, res)=> {
   });
 });
 
+app.put("/cars/:carId", async (req, res) => {
+  if(req.body.currentCar === "on") {
+    req.body.currentCar = true;
+  } else {
+    req.body.currentCar = false;
+  }
 
+  await Car.findByIdAndUpdate(req.params.carId, req.body);
+  
+  res.redirect(`/cars/${req.params.carId}`);
+});
 
 
 app.listen(3000, () => {
