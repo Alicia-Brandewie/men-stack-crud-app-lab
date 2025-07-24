@@ -56,7 +56,9 @@ app.get("/cars/:carId", async (req, res) => {
   const foundCar = await Car.findById(req.params.carId);
   res.render("cars/display.ejs", {car: foundCar});
 });
-//something broken here
+
+
+
 
 
 app.listen(3000, () => {
