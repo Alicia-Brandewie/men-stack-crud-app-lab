@@ -1,4 +1,4 @@
-/*---------- Dependencies ----------*/ 
+/*---------- Dependencies ----------*/
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -8,8 +8,10 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 
 const app = express();
+ const path = require("path");
 
-/*---------- DB connection ----------*/ 
+
+/*---------- DB connection ----------*/
 
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("connected", () => {
@@ -20,20 +22,27 @@ const Car = require("./models/car.js");
 
 app.use(express.urlencoded({ extended: false }));
 
-/*---------- Middleware ----------*/ 
+/*---------- Middleware ----------*/
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
-app.use(morgan("dev")); 
+app.use(morgan("dev"));
 
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride("_method")); 
-app.use(morgan("dev")); 
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+ app.use(express.static(path.join(__dirname, "public")));
 
-/*---------- Routes ----------*/ 
+/*---------- Routes ----------*/
 
 app.get("/", async (req, res) => {
   res.render("index.ejs");
 });
+
+app.get("/", async (req, res) => {
+   res.render("index.ejs");
+ });
 
 app.get("/cars", async (req, res) => {
   const allCars = await Car.find();
@@ -57,10 +66,10 @@ app.post("/cars", async (req, res) => {
 
 app.get("/cars/:carId", async (req, res) => {
   const foundCar = await Car.findById(req.params.carId);
-  res.render("cars/display.ejs", {car: foundCar});
+  res.render("cars/display.ejs", { car: foundCar });
 });
 
-app.get("/cars/:carId/edit", async (req, res)=> {
+app.get("/cars/:carId/edit", async (req, res) => {
   const foundCar = await Car.findById(req.params.carId);
   res.render("./cars/edit.ejs", {
     car: foundCar,
@@ -68,7 +77,7 @@ app.get("/cars/:carId/edit", async (req, res)=> {
 });
 
 app.put("/cars/:carId", async (req, res) => {
-  if(req.body.currentCar === "on") {
+  if (req.body.currentCar === "on") {
     req.body.currentCar = true;
   } else {
     req.body.currentCar = false;
