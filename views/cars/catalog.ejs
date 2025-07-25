@@ -7,15 +7,23 @@
     <title>Cars Catalog</title>
   </head>
   <body>
-    <h1>Cars Catalog</h1>
-     <a href="/cars/new">Add New Car</a>
+    <div class="index-header-div">
+      <h1>Cars Catalog</h1>
+      <a class="add-car" href="/cars/new">  
+        Add Car
+      </a>
+    </div>
 
     <ul>
       <% cars.forEach(car => { %>
-      <li><a href="/cars/<%= car._id %>"><%= car.make + " " + car.model + ", Nickname: " + car.nickname %></a></li>
-        <% }); %>
+      <li>
+        <a class="car-cards" href="/cars/<%= car._id %>"><%= car.make + " " + car.model + ", Nickname: " + car.nickname %>
+        </a>
+      </li>
+      <% }); %>
   </ul>
-<a href="/">Back to home</a>
-
+    <a class="cars-catalog-link" href="/">  
+      <div class="catalog-link-text">Back to home</div>
+    </a>
   </body>
 </html>

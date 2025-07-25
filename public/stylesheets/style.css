@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap');
 
+/* landing page styling */
 body {
     background: #a3ebd1;
     font-family: Helvetica, sans-serif;
@@ -11,18 +12,24 @@ body {
 }
 
 h1 {
-    color: #07013a;
+    color: #1c0379;
     font-family: "Saira Stencil One";
-    font-size: 50px;
+    font-size: 4em;
 }
 
 h2 {
-    color: #07013a;
+    color: #1c0379;
     font-family: "Saira Stencil One";
-    font-size: 30px;
+    font-size: 3em;
 
 }
 
+h3 {
+    color: #1c0379;
+    font-family: helvetica;
+    font-size: 1em;
+
+}
 footer {
     font-family: helvetica;
     font-size: 12px;
@@ -37,3 +44,249 @@ footer {
 .car-sparkle-pic {
     height: 40%;
 }
+
+.cars-catalog-link {
+    text-decoration: none;
+}
+
+.catalog-link-text {
+    background-color: #1c0379;
+    color: white;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    width: 10em;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 5px #957fe4;
+}
+
+.catalog-link-text:hover {
+    background-color: #957fe4;
+    box-shadow: 0 5px #1c0379;
+}
+
+.catalog-link-text:active {
+    background-color: #957fe4;
+    box-shadow: 0 2.5px #1c0379;
+}
+
+
+
+
+
+/* Edit car */
+
+form {
+    font-family: Helvetica, sans-serif;
+    font-size: 1.4em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1c0379;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 5px 6px #957fe4;
+    margin: 20px 10px;
+}
+
+.checkbox-div {
+    flex-direction: row;
+    padding: 20px 30px;
+
+}
+
+label,
+input {
+    margin: 10px 2px 0 2px;
+    font-size: .8em;
+}
+
+button {
+    align-self: center;
+    font-size: 1em;
+    margin: 10px 4px 4px 4px;
+    background-color: #957fe4;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    width: 15em;
+    
+}
+
+button:hover {
+    background-color:  #6e4bee ;
+}
+
+button:active {
+    background-color: #957fe4;
+}
+
+
+/* Individual car display */
+
+
+.car-details {
+    font-family: Helvetica, sans-serif;
+    font-size: 1.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: 5px solid #1c0379;
+    box-shadow: 5px 6px #957fe4;
+    margin: 20px 10px;
+}
+
+.car-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 130px;
+    padding: 20px 0;
+    justify-content: space-evenly;    
+}
+
+.delete-form {
+    padding: 0;
+    box-shadow: 0 0;
+    background-color: white;
+    height: 50px;
+    margin: 20px;
+    min-height: 100%;
+}
+
+.delete-button {
+    background-color: #1c0379;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 20pt;
+    width: 100%;
+ color: white;
+ font: helvetica;
+    text-align: center;
+justify-content: center;
+    align-items: center;
+    display: flex;
+  border-radius: 15px;   
+    height: 50px;
+
+
+}
+
+.edit-link {
+    text-decoration: none;
+}
+
+.edit-text {
+    background-color: #1c0379;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 20pt;
+    width: 100%;
+ color: white;
+  font: helvetica;
+    text-align: center;
+justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 15px;   
+    height: 50px;
+}
+
+.delete-button:hover {
+    background-color:  #957fe4;
+}
+
+.delete-button:active {
+    background-color:  #6e4bee;
+}
+
+.edit-text:hover {
+    background-color:  #957fe4;
+}
+
+.edit-text:active {
+    background-color: #6e4bee;
+}
+
+
+
+
+/*Catalog styling */
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style: none;
+}
+
+.car-cards {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: black;
+    width: 40px;
+    height: 70px;
+    background-color: #f8f8f8;
+    margin: 10px 15px;
+    padding: 30px 50px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    border: 2.5px solid #1c0379;
+}
+
+.car-cards:hover {
+    border: 6px solid #1c0379;
+}
+
+.car-cards:active {
+    border: 6px solid #957fe4;
+}
+
+.index-header-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+}
+
+.add-car {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    text-decoration: none;
+    width: 6em;
+    text-transform: uppercase;
+    background-color: #1c0379;
+    box-shadow: 0 5px #957fe4;
+    border-radius: 30px;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.add-car:hover {
+    background-color: #957fe4;
+    box-shadow: 0 5px #1c0379;
+}
+
+.add-car:active {
+    background-color: #957fe4;
+    box-shadow: 0 2.5px #1c0379;
+}
+
+

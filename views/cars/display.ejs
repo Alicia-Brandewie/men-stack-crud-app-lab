@@ -6,21 +6,50 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Car Display Page</title>
   </head>
+  
   <body>
-    <h1> <%= car.make + " " + car.model %></h1>
-      <p> Year: <%= car.year %></p>
-      <p> Color: <%= car.color%></p>
-      <p> Nickname: <%= car.nickname %></p>
-      <% if (car.currentCar) { %>
-        <p>This is your current car!</p>
-      <% } else { %>
-        <p>This is not your current car!</p>
-      <% } %>
-        <a href="/cars/<%= car._id %>/edit">Edit <%= car.make + " " + car.model%></a>
-        <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete <%= car.make + " " + car.model%></button>
-        </form>
-        <a href="/cars">Browse Cars</a>
-        <a href="/">Back to home</a>
+    <div class="car-details">
+      <h2> <%= car.make + " " + car.model %></h2>
+        <h3> Year: <%= car.year %></h3>
+        <h3> Color: <%= car.color%></h3>
+        <h3> Nickname: <%= car.nickname %></h3>
+        <% if (car.currentCar) { %>
+          <h3>This is your current car!</ph3>
+        <% } else { %>
+          <h3>This is not your current car!</h3>
+        <% } %>
+    
+
+    <div class="car-actions">
+      <a class="edit-link" href="/cars/<%= car._id %>/edit">  
+        <div class="edit-text"> 
+          Edit
+        </div>
+      </a>
+
+
+
+      <form 
+      class="delete-form"
+      action="/cars/<%=car._id%>?_method=DELETE" 
+      method="POST"
+      >
+      <button class="delete-button" type="submit">
+        Delete
+      </button>
+      </form>
+  </div>   
+
+</div>
+
+
+
+      <a class="cars-catalog-link" href="/cars">
+        <div class="catalog-link-text">Browse Cars</div> 
+      </a>
+    
+      <a class="cars-catalog-link" href="/">  
+        <div class="catalog-link-text">Back to home</div>
+      </a> 
   </body>
 </html>

@@ -26,17 +26,26 @@
         <label for="nickname">Nickname:</label>
         <input type="text" name="nickname" id="nickname" value="<%= car.nickname %>" />
 
+
+
+
+    <div class="checkbox-div">
         <label for="currentCar">Current Car?</label>
         <input type="checkbox" name="currentCar" id="currentCar" 
         <% if (car.currentCar) { 
             %>checked<% 
         } 
         %>></input>
+    </div>
+
+
+
 
             <button type="submit">Update car</button>
     </form>
-    <a href="/">Back to home</a>
-
+    <a class="cars-catalog-link" href="/">  
+        <div class="catalog-link-text">Back to home</div>
+        </a>
 </body>
 
 </html>
