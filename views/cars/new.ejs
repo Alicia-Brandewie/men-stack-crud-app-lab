@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Catalog a Car</title>
-  </head>
-  <body>
-    <h1>Create a new car catalog entry!</h1>
-    <form action ="/cars" method="POST">
-        <label for="make">Make:</label>
-        <input type="text" name="make" id="make"/>
 
-        <label for="model">Model:</label>
-        <input type="text" name="model" id="model"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>Catalog a Car</title>
+</head>
 
-        <label for="year">Year:</label>
-        <input type="text" name="year" id="year"/>
+<body>
+  <h1>Create a new car catalog entry!</h1>
+  <form action="/cars" method="POST">
+    <label for="make">Make:</label>
+    <input type="text" name="make" id="make" />
 
-        <label for="color">Color:</label>
-        <input type="text" name="color" id="color"/>
+    <label for="model">Model:</label>
+    <input type="text" name="model" id="model" />
 
-        <label for="nickname">Nickname:</label>
-        <input type="text" name="nickname" id="nickname"/>
-        
-        <label for="currentCar">Current Car?</label>
-        <input type="checkbox" name="currentCar" id="currentCar"></input> 
+    <label for="year">Year:</label>
+    <input type="text" name="year" id="year" />
 
-        <button type="submit">Add car</button>
-    </form>
-        <a class="cars-catalog-link" href="/">  
-        <div class="catalog-link-text">Back to home</div>
-        </a>
-  </body>
+    <label for="color">Color:</label>
+    <input type="text" name="color" id="color" />
+
+    <label for="nickname">Nickname:</label>
+    <input type="text" name="nickname" id="nickname" />
+
+    <div class="checkbox-div">
+      <label for="currentCar">Current Car?</label>
+      <input type="checkbox" name="currentCar" id="currentCar"></input>
+    </div>
+
+    <button type="submit">Add car</button>
+  </form>
+  <a class="cars-catalog-link" href="/">
+    <div class="catalog-link-text">Back to home</div>
+  </a>
+</body>
+
 </html>

@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Car Display Page</title>
   </head>
-  
   <body>
     <div class="car-details">
       <h2> <%= car.make + " " + car.model %></h2>
@@ -18,17 +17,12 @@
         <% } else { %>
           <h3>This is not your current car!</h3>
         <% } %>
-    
-
     <div class="car-actions">
       <a class="edit-link" href="/cars/<%= car._id %>/edit">  
         <div class="edit-text"> 
           Edit
         </div>
       </a>
-
-
-
       <form 
       class="delete-form"
       action="/cars/<%=car._id%>?_method=DELETE" 
@@ -39,11 +33,7 @@
       </button>
       </form>
   </div>   
-
 </div>
-
-
-
       <a class="cars-catalog-link" href="/cars">
         <div class="catalog-link-text">Browse Cars</div> 
       </a>

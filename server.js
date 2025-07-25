@@ -8,7 +8,7 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 
 const app = express();
- const path = require("path");
+const path = require("path");
 
 
 /*---------- DB connection ----------*/
@@ -23,6 +23,7 @@ const Car = require("./models/car.js");
 app.use(express.urlencoded({ extended: false }));
 
 /*---------- Middleware ----------*/
+
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
 app.use(morgan("dev"));
@@ -32,7 +33,7 @@ app.use(methodOverride("_method"));
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
- app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 /*---------- Routes ----------*/
 
@@ -41,8 +42,8 @@ app.get("/", async (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-   res.render("index.ejs");
- });
+  res.render("index.ejs");
+});
 
 app.get("/cars", async (req, res) => {
   const allCars = await Car.find();
@@ -90,8 +91,6 @@ app.delete("/cars/:carId", async (req, res) => {
   await Car.findByIdAndDelete(req.params.carId);
   res.redirect("/cars");
 });
-
-
 
 app.listen(3000, () => {
   console.log('Listening on port 3000');
